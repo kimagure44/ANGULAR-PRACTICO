@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="shop">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+       <div class="jumbotron">
+           <div class="container">
+               <h1>Datos de contacto</h1>
+           </div>
+       </div>
+        <div class="container" data-ng-controller="controllerShop">
+            <div class="col-xs-12">
+                <form id="formulario" name="formulario" novalidate data-ng-hide="datosOK" data-ng-submit="addDatos()">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" data-ng-model="datos.nombre" placeholder="Escribe tu nombre" required>
+                        <div data-ng-show="formulario.$submitted && !datos.nombre" class="alert alert-warning">Campo obligatorio</div>    
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" data-ng-model="datos.email" placeholder="Escribe tu email" required>
+                        <div data-ng-show="formulario.$submitted && !datos.email"  class="alert alert-warning">Campo obligatorio</div>    
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" class="form-control" data-ng-model="datos.edad" placeholder="Escribe tu edad" min="1" max="99" required>
+                        <div data-ng-show="formulario.$submitted && !datos.edad" class="alert alert-warning">Campo obligatorio</div>    
+                        <div data-ng-show="datos.edad<18" class="alert alert-warning">Edad mínima 18 años</div>    
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Enviar" data-ng-disabled="!datos.nombre || !datos.email || !datos.edad || datos.edad<18">    
+                    </div>
+                </form>
+                <div data-ng-show="datosOK">
+                    <h3>Los datos se guardaron correctamente</h3>
+                    <ul>
+                        <li>Nombre:{{datos.nombre}}</li>
+                        <li>Email:{{datos.email}}</li>
+                        <li>Edad:{{datos.edad}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            var app = angular.module("shop",[]);
+            app.controller("controllerShop",["$scope",function($scope){
+                
+                $scope.addDatos = function() {
+                    if ($scope.formulario.$valid) {
+                        $scope.datosOK = true;
+                    }
+                }
+            }])
+        </script>
+    </body>
+</html>

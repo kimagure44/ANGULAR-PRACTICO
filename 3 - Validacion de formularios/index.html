@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="shop">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .required {
+                font-size: 9px;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+       <div class="jumbotron">
+           <div class="container">
+               <h1>Datos de contacto</h1>
+           </div>
+       </div>
+        <div class="container">
+            <div class="col-xs-12">
+                <form id="formulario" name="formulario" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" data-ng-model="datos.nombre" placeholder="Escribe tu nombre" required>
+                        <span class="required" data-ng-hide="datos.nombre">Campo obligatorio</span>    
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" data-ng-model="datos.email" placeholder="Escribe tu email" required>
+                        <span class="required" data-ng-hide="datos.email">Campo obligatorio</span>  
+                    </div>
+                    <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" class="form-control" data-ng-model="datos.edad" placeholder="Escribe tu edad" min="1" max="99" required>
+                        <span class="required" data-ng-hide="datos.edad">Campo obligatorio</span>  
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Enviar" data-ng-disabled="formulario.$invalid">    
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            var app = angular.module("shop",[]);
+        </script>
+    </body>
+</html>
