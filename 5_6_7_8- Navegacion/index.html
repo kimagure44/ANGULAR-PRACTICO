@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Navegacion</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body data-ng-app="navegacion">
+        <header class="navbar navbar-default" data-ng-controller="navegacionController">
+            <div class="container">
+                <nav class="collapse navbar-collapse" id="navegacion" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li data-ng-class="{active:activo('/')}"><a href="#!inicio">Inicio</a></li>
+                        <li data-ng-class="{active:activo('/galeria')}"><a href="#!galeria">Galeria</a></li>
+                        <li data-ng-class="{active:activo('/mapa')}"><a href="#!mapa">Mapa</a></li>
+                        <li data-ng-class="{active:activo('/contacto')}"><a href="#!contacto">Contacto</a></li>
+                        <!--<li><a href="#!">GO</a></li>-->
+                    </ul>
+                </nav>
+            </div>
+        </header>       
+        <div class="container" data-ng-view></div>       
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        
+        <script src="app.js"></script>
+        <script src="controllers/inicio.js"></script>
+        <script src="controllers/navegacionControl.js"></script>
+    </body>
+</html>
