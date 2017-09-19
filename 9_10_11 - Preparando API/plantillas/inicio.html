@@ -1,0 +1,13 @@
+<h1>Datos personales</h1>
+<div class="listado">
+    <ul class="list-group">
+        <li data-ng-repeat="datos in datosPersonales" class="list-group-item">
+           <ul class="list-group">
+               <li class="list-group-item">ID:{{datos.id}}</li>
+               <li class="list-group-item">Nombre:{{datos.nombre}}</li>
+               <li class="list-group-item">Descripcion:{{datos.descripcion}}</li>
+               <li class="list-group-item">Fecha:{{datos.fecha}}</li>
+           </ul>
+        </li>
+    </ul>
+</div>
