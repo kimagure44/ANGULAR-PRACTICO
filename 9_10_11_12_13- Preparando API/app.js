@@ -13,6 +13,10 @@ app.config(function($routeProvider) {
         templateUrl: "plantillas/404.html",
         controller: "inicio"
     })
+    .when("/detalles", {
+        templateUrl:"plantillas/detalles.html",
+        controller: "detalles"
+    })
     .otherwise({
         redirectTo: "/404",
         controller: "inicio"
