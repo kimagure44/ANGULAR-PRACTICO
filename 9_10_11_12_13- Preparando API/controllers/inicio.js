@@ -2,7 +2,7 @@ app.controller("inicio",["$scope","$http","$location","cfgGlobal", function($sco
     $scope.config = cfgGlobal;
     $scope.verDetalles = function(datos) {
         debugger;
-        $location.path("/detalles");
+        $location.path("/detalles/" + datos.id);
     }
     $http.get($scope.config.apiURL + "lista.php").then(function(response){
        $scope.datosPersonales = response.data;

@@ -13,7 +13,7 @@ app.config(function($routeProvider) {
         templateUrl: "plantillas/404.html",
         controller: "inicio"
     })
-    .when("/detalles", {
+    .when("/detalles/:datoID", {
         templateUrl:"plantillas/detalles.html",
         controller: "detalles"
     })

@@ -13,7 +13,7 @@
     $conexion->set_charset("utf8");
 
 
-    $result = mysqli_query($conexion, "SELECT * FROM lista_empleados WHERE id=".$_GET["UserID"]);
+    $result = mysqli_query($conexion, "SELECT * FROM lista_empleados WHERE id=".$_GET["datoID"]);
 
     $resultado = array();
 
