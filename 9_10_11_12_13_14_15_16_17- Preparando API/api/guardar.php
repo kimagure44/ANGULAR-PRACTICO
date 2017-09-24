@@ -15,10 +15,9 @@
     $postdata = file_get_contents("php://input");
     $request = json_decode($postdata);
     $id = $request->id;
-    $nombre = $request->mombre;
+    $nombre = $request->nombre;
     $descripcion = $request->descripcion;
-    $fecha = $request->fecha;
 
-    $result = mysqli_query($conexion, "UPDATE lista_empleados SET nombre='$nombre', descripcion='.$descripcion',fecha='$fecha' WHERE id=$id");
+    $result = mysqli_query($conexion, "UPDATE lista_empleados SET nombre='$nombre', descripcion='$descripcion' WHERE id=$id");
     echo '{"response":"ok"}';
 ?>

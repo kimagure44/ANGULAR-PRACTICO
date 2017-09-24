@@ -1,24 +1,27 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        Detalles
+        Detalles de {{res.nombre}}
     </div>
     <div class="panel-body">
         <form>
             <div class="form-group">
                 <label for="id">ID</label>
-                <input type="text" readonly value={{res.id}}>
+                {{res.id}}
             </div>
             <div class="form-group">
                 <label for="id">Nombre</label>
-                <input type="text" readonly value={{res.nombre}}>
+                <input type="text" data-ng-model="res.nombre">
             </div>
             <div class="form-group">
                 <label for="id">Descripcion</label>
-                <input type="text" readonly value={{res.descripcion}}>
+                <input type="text" data-ng-model="res.descripcion">
             </div>
             <div class="form-group">
                 <label for="id">Fecha</label>
-                <input type="text" readonly value={{res.fecha}}>
+                {{res.fecha}}
+            </div>
+            <div class="form-group">
+                <button data-ng-click="save()">Guardar</button>
             </div>
         </form>
     </div>

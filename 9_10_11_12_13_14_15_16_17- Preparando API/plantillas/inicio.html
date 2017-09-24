@@ -1,7 +1,12 @@
 <h1>Datos personales</h1>
-<div class="listado">
-    <ul class="list-group">
-        <li data-ng-repeat="datos in datosPersonales" class="list-group-item">
+<div class="precarga" data-ng-hide="datosPersonales">
+    <i class="fa fa-refresh fa-spin fa-2x"></i>
+</div>
+<div class="listado" data-ng-show="datosPersonales">
+    <input type="search" data-ng-model="busqueda" class="col-xs-12 form-control">    
+    <label for="">{{ "Buscando...:" + busqueda }}</label>
+    <ul class="col-xs-12" class="list-group">
+        <li data-ng-repeat="datos in datosPersonales | filter: busqueda" class="list-group-item">
            <ul class="list-group">
                <li class="list-group-item" data-ng-click="verDetalles(datos)">ID:{{datos.id}}</li>
                <li class="list-group-item" data-ng-click="verDetalles(datos)">Nombre:{{datos.nombre}}</li>
