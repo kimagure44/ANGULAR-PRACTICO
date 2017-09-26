@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Navegacion</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body data-ng-app="navegacion">
+        <header class="navbar navbar-default" data-ng-controller="navegacionController">
+            <div class="container">
+                <nav class="collapse navbar-collapse" id="navegacion" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><a>Tienda Virtual</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>      
+        <div class="container" data-ng-view></div>       
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <script src="app.js"></script>
+        <script src="controllers/inicio.js"></script>
+        <script src="controllers/confirmacion.js"></script>
+        <script src="controllers/navegacionControl.js"></script>
+        <script src="servicios/carritoDeCompras.js"></script>
+    </body>
+</html>

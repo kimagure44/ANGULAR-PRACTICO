@@ -1,0 +1,30 @@
+.division {
+    border-bottom: 1px solid #dddddd;
+}
+.notPadding {
+    padding: 0;
+}
+.caja2 > .panel > .panel-body > div:nth-of-type(2) > span {
+    margin: 8px 8px 0 8px;
+}
+.imagen {
+    border: 1px solid #dddddd;
+    padding: 10px;
+    text-align: center;
+}
+.precio {
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+}
+.caja1 p {
+    padding: 5px 0;
+}
+.ocultar {
+    opacity: 0.4;
+}
+ul.list-group {
+    height: 100px;
+    overflow-y: auto;
+    border: 1px solid #dddddd;
+}
